@@ -4,5 +4,13 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
     </style>
+    <style name="TitleBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:id">@+id/title_container</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">45dip</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@color/background_material_dark</item>
+    </style>
 
 </resources>

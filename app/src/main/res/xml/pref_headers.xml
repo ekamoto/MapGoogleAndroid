@@ -3,15 +3,15 @@
     <!-- These settings headers are only used on tablets. -->
 
     <header
-        android:fragment="com.hisamoto.leandro.mapaandroid.SettingsActivity$GeneralPreferenceFragment"
+        android:fragment="com.hisamoto.leandro.mapaandroid.activity.SettingsActivity$GeneralPreferenceFragment"
         android:title="@string/pref_header_general" />
 
     <header
-        android:fragment="com.hisamoto.leandro.mapaandroid.SettingsActivity$NotificationPreferenceFragment"
+        android:fragment="com.hisamoto.leandro.mapaandroid.activity.SettingsActivity$NotificationPreferenceFragment"
         android:title="@string/pref_header_notifications" />
 
     <header
-        android:fragment="com.hisamoto.leandro.mapaandroid.SettingsActivity$DataSyncPreferenceFragment"
+        android:fragment="com.hisamoto.leandro.mapaandroid.activity.SettingsActivity$DataSyncPreferenceFragment"
         android:title="@string/pref_header_data_sync" />
 
 </preference-headers>

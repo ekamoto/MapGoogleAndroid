@@ -8,5 +8,12 @@
     <string name="pref_description_save_file">Salvar em arquivo na pasta Hisamoto</string>
     <string name="pref_title_time_loop">Tempo Busca em segundos</string>
     <string name="pref_default_title_time_loop">5</string>
+    <string name="cadastro_rotas">Cadastro de Rotas</string>
+    <string name="lista_rotas">Lista de Rotas</string>
+    <string name="title_activity_cadastro_rota">CadastroRotaActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_lista_pesquisa">ListaPesquisa</string>
+    <string name="home">Eita</string>
 
 </resources>
