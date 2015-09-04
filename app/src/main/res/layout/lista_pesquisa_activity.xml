@@ -27,10 +27,13 @@
     </RelativeLayout>
 
     <EditText
+        android:theme="@style/Base.V12.Widget.AppCompat.EditText"
+        android:textStyle="italic"
         android:id="@+id/campo_busca"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="Pesquisar"/>
+        android:hint="Busca pela origem..."
+        android:textColor="@color/background_floating_material_light"/>
 
     <ListView
         android:layout_width="match_parent"

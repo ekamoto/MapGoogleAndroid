@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hisamoto.leandro.mapaandroid.activity.ShowRotaActivity">
+
+    <RelativeLayout
+        android:id="@+id/linearLayout1"
+        style="@style/TitleBar"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/img_voltar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/abc_ic_ab_back_mtrl_am_alpha" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/img_voltar"
+            android:text="@string/rota"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/tv1"
+            android:text="@string/status_rota"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout1"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <TextView
+            android:id="@+id/texto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rota"
+            android:textSize="@dimen/abc_text_size_title_material" />
+
+        <TextView
+            android:id="@+id/show_origem_destino"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/texto"
+            android:text="Origem/Destino" />
+
+        <TextView
+            android:id="@+id/show_descricao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/show_origem_destino"
+            android:text="@string/descricao" />
+
+        <Button
+            android:id="@+id/pausar_rota"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/show_descricao"
+            android:layout_marginTop="10dp"
+            android:text="Pausar" />
+
+        <Button
+            android:id="@+id/iniciar_rota"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/show_descricao"
+            android:layout_toRightOf="@+id/pausar_rota"
+            android:layout_alignTop="@+id/pausar_rota"
+            android:text="Iniciar" />
+
+        <Button
+            android:id="@+id/plotar_pontos"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/iniciar_rota"
+            android:layout_toEndOf="@+id/iniciar_rota"
+            android:layout_toRightOf="@id/iniciar_rota"
+            android:text="Plotar no mapa" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -44,9 +44,7 @@
                 android:id="@+id/label_origem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:text="Origem"
-
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <EditText

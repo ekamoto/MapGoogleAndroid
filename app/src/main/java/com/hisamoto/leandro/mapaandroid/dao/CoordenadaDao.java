@@ -6,25 +6,25 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import com.hisamoto.leandro.mapaandroid.tracker.Rota;
 import com.hisamoto.leandro.mapaandroid.db.DBHelper;
+import com.hisamoto.leandro.mapaandroid.tracker.Coordenada;
+import com.hisamoto.leandro.mapaandroid.tracker.Rota;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by leandro on 24/08/15.
+ * Created by leandro on 27/08/15.
  */
-public class RotaDao {
-
+public class CoordenadaDao {
     private DBHelper dbHelper;
 
-    public RotaDao(Context context) {
+    public CoordenadaDao(Context context) {
 
         this.dbHelper = new DBHelper(context);
     }
 
-    public boolean cadastrarRota(ContentValues values) {
+    public boolean cadastrarCoordenada(ContentValues values) {
 
         // Validação de campos e regra de negócio
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -34,7 +34,7 @@ public class RotaDao {
 
         try {
 
-            id = db.insert("rota",  null, values);
+            id = db.insert("rota_coordenada", null, values);
             db.setTransactionSuccessful();
         } catch (android.database.SQLException e) {
 
@@ -46,33 +46,31 @@ public class RotaDao {
 
         db.close();
 
-        return id!=-1?true:false;
+        return id != -1 ? true : false;
     }
 
-    public List<Rota> getUsuarios() {
+    public List<Coordenada> getCoordenadas(int idRota) {
 
-        // Validação de campos e regra de negócio
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         db.beginTransaction();
 
-        List<Rota> lista = new ArrayList<>();
+        List<Coordenada> lista = new ArrayList<>();
 
         try {
 
-            final Cursor c = db.query("rota", new String[]{"origem, destino, descricao, _id"}, null, null, null, null, null);
+            final Cursor c = db.query("rota_coordenada", new String[]{"latitude, longitude, tempo, id_rota"}, " id_rota=" + idRota + " ", null, null, null, null);
 
-            if(c!=null) {
+            if (c != null) {
 
                 c.moveToFirst();
 
-                while(c.isAfterLast() == false) {
+                while (c.isAfterLast() == false) {
 
-                    Log.i("Hisamotoaasfdsa",""+c.getString(2));
-                    lista.add(new Rota(c.getString(0), c.getString(1), c.getString(2), c.getString(3)));
+                    Log.i("Hisamotoaasfdsa", "" + c.getString(2));
+                    lista.add(new Coordenada(c.getString(2), c.getInt(3), c.getString(1), c.getString(0)));
                     c.moveToNext();
                 }
             }
-
 
             db.setTransactionSuccessful();
         } catch (android.database.SQLException e) {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hisamoto.leandro.mapaandroid">
+    package="com.hisamoto.leandro.mapaandroid" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -14,12 +14,13 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -30,20 +31,26 @@
         <activity
             android:name=".activity.MainActivity"
             android:configChanges="orientation"
-            android:label="@string/title_activity_main">
+            android:label="@string/title_activity_main" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".activity.SettingsActivity"
-            android:label="@string/title_activity_settings"></activity>
+            android:label="@string/title_activity_settings" />
         <activity
             android:name=".activity.CadastroRotaActivity"
-            android:label="@string/title_activity_cadastro_rota"></activity>
+            android:label="@string/title_activity_cadastro_rota" />
         <activity
             android:name=".activity.ListPesquisaActivity"
-            android:label="@string/title_activity_lista_pesquisa"></activity>
+            android:label="@string/title_activity_lista_pesquisa" />
+        <activity
+            android:name=".activity.ShowRotaActivity"
+            android:label="@string/title_activity_show_rota" >
+        </activity>
     </application>
+
 </manifest>

@@ -7,11 +7,13 @@ public class Rota {
     private String origem;
     private String destino;
     private String descricao;
+    private String id;
 
-    public Rota(String origem, String destino, String descricao) {
+    public Rota(String origem, String destino, String descricao, String id) {
         this.origem = origem;
         this.destino = destino;
         this.descricao = descricao;
+        this.id = id;
     }
 
     public Rota() {
@@ -40,5 +42,13 @@ public class Rota {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

@@ -15,5 +15,11 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_lista_pesquisa">ListaPesquisa</string>
     <string name="home">Eita</string>
+    <string name="title_activity_show_rota">ShowRotaActivity</string>
+    <string name="rota">Rota</string>
+    <string name="origem">Origem</string>
+    <string name="destino">Destino</string>
+    <string name="descricao">Descrição</string>
+    <string name="status_rota">[Status da Rota]</string>
 
 </resources>

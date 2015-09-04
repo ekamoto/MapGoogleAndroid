@@ -11,19 +11,18 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private static String NAME_DB = "mapaGoogle";
     private static Integer VERSION_DB = 1;
-    private String sql_rota = "CREATE TABLE rota( "+
-            "_id INTEGER PRIMARY KEY AUTOINCREMENT "+
-            ", origem TEXT "+
-            ", destino TEXT  "+
-            ", descricao TEXT "+
-            ", dthora_fim LONG "+
+    private String sql_rota = "CREATE TABLE rota( " +
+            "_id INTEGER PRIMARY KEY AUTOINCREMENT " +
+            ", origem TEXT " +
+            ", destino TEXT  " +
+            ", descricao TEXT " +
+            ", dthora_fim LONG " +
             ", dthora_inicio LONG );";
     private String sql_rota_coordenada = "CREATE TABLE rota_coordenada( " +
             "id_rota INTEGER" +
-            ", latidude INTEGER " +
-            ", longitude INTEGER " +
-            ", tempo LONG " +
-            ", destino TEXT );";
+            ", latitude TEXT " +
+            ", longitude TEXT " +
+            ", tempo TEXT );";
 
     public DBHelper(Context context) {
 

@@ -1,5 +1,6 @@
 package com.hisamoto.leandro.mapaandroid.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -10,13 +11,13 @@ import android.widget.Toast;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.hisamoto.leandro.mapaandroid.R;
-import com.hisamoto.leandro.mapaandroid.thread.ThreadAsyncTask;
+import com.hisamoto.leandro.mapaandroid.thread.ThreadGPSAsyncTask;
 
 public class MainActivity extends ActionBarActivity {
 
     private static GoogleMap mMap;
     public static boolean iniciado = false;
-    private static ThreadAsyncTask threadAsyncTask;
+    public static ThreadGPSAsyncTask threadAsyncTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +31,12 @@ public class MainActivity extends ActionBarActivity {
 
             setUpMapIfNeeded();
 
-            threadAsyncTask = new ThreadAsyncTask(getApplicationContext(), mMap);
+            threadAsyncTask = new ThreadGPSAsyncTask(getApplicationContext(), mMap);
 
             Bundle bundle = new Bundle();
             bundle.putString("msg", "Passando parâmetro para o processamento");
 
-            threadAsyncTask.execute(bundle);
+            threadAsyncTask.execute();
 
             iniciado = true;
         } else {

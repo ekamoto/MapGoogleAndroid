@@ -1,13 +1,18 @@
 package com.hisamoto.leandro.mapaandroid.activity;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.hisamoto.leandro.mapaandroid.R;
 import com.hisamoto.leandro.mapaandroid.adapter.ListViewCustomizadoAdapter;
@@ -77,5 +82,27 @@ public class ListPesquisaActivity extends ListActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+
+        Intent i = new Intent();
+        i.setClass(getApplicationContext(), ShowRotaActivity.class);
+
+        Bundle b = new Bundle();
+        b.putString("origem",listaRota.get(position).getOrigem());
+        b.putString("destino",listaRota.get(position).getDestino());
+        b.putString("descricao",listaRota.get(position).getDescricao());
+        b.putString("idRota",listaRota.get(position).getId());
+
+
+        i.putExtras(b);
+
+        startActivity(i);
+
+        //Toast.makeText(getApplicationContext(),"Origem: "+origem.getText(),Toast.LENGTH_SHORT).show();
+        Log.i("HisamotoTeste", "Origem: " + listaRota.get(position).getOrigem());
     }
 }

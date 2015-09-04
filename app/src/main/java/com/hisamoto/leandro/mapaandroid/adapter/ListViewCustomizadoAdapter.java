@@ -51,21 +51,17 @@ public class ListViewCustomizadoAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.activity_listview_customizado, parent, false);
         }
 
-        // Imagem do item a ser apresentada na posição atual da ListView
-        ImageView imagem = (ImageView) convertView.findViewById(R.id.imagem_activity);
-        imagem.setImageResource(R.mipmap.ic_launcher);
+        // Rota
+        TextView rota = (TextView) convertView.findViewById(R.id.rota);
+        rota.setText(item.getId() + " - " + item.getOrigem() + " / " + item.getDestino());
 
-        // Nome
-        TextView nome = (TextView) convertView.findViewById(R.id.nome_activity);
-        nome.setText(item.getOrigem());
+        // Descrição
+        TextView descricao = (TextView) convertView.findViewById(R.id.descricao);
+        descricao.setText(item.getDescricao());
 
-        // E-mail
-        TextView email = (TextView) convertView.findViewById(R.id.email_activity);
-        email.setText(item.getDestino());
-
-        // Hora
-        TextView hora = (TextView) convertView.findViewById(R.id.hora_activity);
-        hora.setText(item.getDescricao());
+        // Data
+        TextView data = (TextView) convertView.findViewById(R.id.data);
+        data.setText("16/09/2015");
 
         // Status
         TextView status = (TextView) convertView.findViewById(R.id.status);
